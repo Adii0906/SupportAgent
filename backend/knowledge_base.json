@@ -1,0 +1,74 @@
+[
+    {
+        "id": "kb_001",
+        "category": "billing",
+        "question": "How do I update my payment method?",
+        "answer": "To update your payment method, go to Settings > Billing > Payment Methods. Click 'Add New Payment Method' or edit an existing one. Your payment information is encrypted and secure."
+    },
+    {
+        "id": "kb_002",
+        "category": "billing",
+        "question": "Can I get an invoice for my purchase?",
+        "answer": "Yes! You can download invoices from your account dashboard under Billing > Invoices. You'll see all your past transactions and can generate PDF invoices."
+    },
+    {
+        "id": "kb_003",
+        "category": "shipping",
+        "question": "How long does shipping take?",
+        "answer": "Standard shipping typically takes 5-7 business days. Express shipping is 2-3 business days. Once your order ships, you'll receive a tracking number via email."
+    },
+    {
+        "id": "kb_004",
+        "category": "shipping",
+        "question": "Can I change my shipping address after ordering?",
+        "answer": "You can change your address within 24 hours of placing the order. Please contact support immediately with your order number and new address."
+    },
+    {
+        "id": "kb_005",
+        "category": "refund",
+        "question": "What is your return policy?",
+        "answer": "We accept returns within 30 days of purchase. Items must be unused and in original packaging. Return shipping is free for defective items. Refunds are processed within 5-7 business days after we receive the item."
+    },
+    {
+        "id": "kb_006",
+        "category": "refund",
+        "question": "How do I request a refund?",
+        "answer": "To request a refund, go to your account and select the order. Click 'Request Return' and follow the instructions. We'll provide you with a prepaid return label."
+    },
+    {
+        "id": "kb_007",
+        "category": "account",
+        "question": "How do I reset my password?",
+        "answer": "Click 'Forgot Password' on the login page. Enter your email address. You'll receive a password reset link. Click the link and create a new password. The link expires in 24 hours."
+    },
+    {
+        "id": "kb_008",
+        "category": "account",
+        "question": "How do I delete my account?",
+        "answer": "Go to Settings > Account > Delete Account. Note that this action is permanent and you'll lose access to all your data, orders, and wishlist. You'll be asked to confirm."
+    },
+    {
+        "id": "kb_009",
+        "category": "account",
+        "question": "Can I change my email address?",
+        "answer": "Yes! Go to Settings > Account Information > Email. Enter your new email and we'll send a verification link. Confirm the new email to complete the change."
+    },
+    {
+        "id": "kb_010",
+        "category": "technical",
+        "question": "The app keeps crashing. What should I do?",
+        "answer": "Try these steps: 1) Clear app cache in Settings. 2) Restart your device. 3) Update the app to the latest version. 4) Reinstall if problems persist. If issues continue, contact support with your device model."
+    },
+    {
+        "id": "kb_011",
+        "category": "technical",
+        "question": "I'm having trouble logging in",
+        "answer": "First, check if your internet connection is stable. Try clearing your browser cache and cookies. If using the app, try logging out and back in. If the issue persists, use 'Forgot Password' to reset your credentials."
+    },
+    {
+        "id": "kb_012",
+        "category": "general",
+        "question": "What are your business hours?",
+        "answer": "Our customer support team is available 24/7. Chat support responds within 2 hours. Email support: Monday-Friday 9am-6pm EST. For urgent issues, use live chat."
+    }
+]
