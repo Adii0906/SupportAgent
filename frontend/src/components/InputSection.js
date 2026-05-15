@@ -49,7 +49,7 @@ const InputSection = () => {
     if (!recordedBlob) return;
 
     setIsLoading(true);
-    const loadingToast = toast.loading('Processing your audio...');
+    const loadingToast = toast.loading('Processing audio and avatar video (often 3–15 min)...');
 
     try {
       const formData = new FormData();
@@ -80,7 +80,7 @@ const InputSection = () => {
     }
 
     setIsLoading(true);
-    const loadingToast = toast.loading('Generating response...');
+    const loadingToast = toast.loading('Generating reply and avatar video (often 3–15 min)...');
 
     try {
       const formData = new FormData();

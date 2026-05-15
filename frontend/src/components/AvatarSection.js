@@ -23,7 +23,17 @@ const AvatarSection = () => {
 
   const videoUrl = response?.video_url;
 
-  // Auto-play video if enabled
+  // New URL = reset player state (avoid stale error/loaded flags from a previous response)
+  useEffect(() => {
+    if (!videoUrl) return;
+    setHasError(false);
+    setVideoLoaded(false);
+    setVideoErrorMessage('');
+    setIsBuffering(true);
+    setCurrentTime(0);
+    setIsPlaying(false);
+    setIsAvatarPlaying(false);
+  }, [videoUrl, setIsAvatarPlaying]);
   useEffect(() => {
     if (videoUrl && videoRef.current && autoPlayAudio && !hasError) {
       // Delay auto-play to ensure video is loaded
@@ -163,11 +173,12 @@ const AvatarSection = () => {
         {videoUrl ? (
           <div className="video-wrapper">
             <video
+              key={videoUrl}
               ref={videoRef}
               src={videoUrl}
               controls
               playsInline
-              preload="metadata"
+              preload="auto"
               onPlay={() => {
                 setIsPlaying(true);
                 setIsAvatarPlaying(true);
