@@ -55,7 +55,9 @@ const InputSection = () => {
       const formData = new FormData();
       formData.append('audio_file', recordedBlob, 'audio.webm');
       formData.append('language', selectedLanguage);
-      formData.append('avatar_id', avatarId);
+      if (avatarId) {
+        formData.append('avatar_id', avatarId);
+      }
 
       const result = await apiService.submitSupport(formData);
       
@@ -84,7 +86,9 @@ const InputSection = () => {
       const formData = new FormData();
       formData.append('text_input', textInput);
       formData.append('language', selectedLanguage);
-      formData.append('avatar_id', avatarId);
+      if (avatarId) {
+        formData.append('avatar_id', avatarId);
+      }
 
       const result = await apiService.submitSupport(formData);
       setResponse(result);

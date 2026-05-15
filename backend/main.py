@@ -60,7 +60,7 @@ async def handle_support_request(
     audio_file: Optional[UploadFile] = File(None),
     text_input: Optional[str] = Form(None),
     language: Optional[str] = Form(None),
-    avatar_id: str = Form("Wayne_20220920")
+    avatar_id: Optional[str] = Form(None)
 ):
     """
     Main endpoint for customer support with speaking avatar
@@ -171,20 +171,19 @@ async def transcribe_audio(audio_file: UploadFile = File(...)):
 @app.get("/api/avatars")
 async def get_available_avatars():
     """
-    Get list of available HeyGen avatars with their details
+    HeyGen V3: `looks` entries use `id` as the value to send as avatar_id (look id).
+    `groups` are avatar characters; video endpoints need a look id, not a group id.
     """
     try:
-        avatars = await heygen_service.get_avatars()
-        return {"status": "success", "avatars": avatars}
+        looks = await heygen_service.list_avatar_looks()
+        groups = await heygen_service.get_avatars()
+        return {"status": "success", "looks": looks, "groups": groups}
     except Exception as e:
-        # Return default avatars if API fails
         return {
             "status": "success",
-            "avatars": [
-                {"id": "Wayne_20220920", "name": "Wayne", "gender": "male"},
-                {"id": "Lisa_20220914", "name": "Lisa", "gender": "female"},
-                {"id": "Anna_20220912", "name": "Anna", "gender": "female"},
-            ]
+            "looks": [],
+            "groups": [],
+            "error": str(e),
         }
 
 
@@ -214,7 +213,7 @@ async def get_supported_languages():
 async def generate_avatar_video_endpoint(
     text: str,
     language: str = "en",
-    avatar_id: str = "Wayne_20220920"
+    avatar_id: Optional[str] = None
 ):
     """
     Generate avatar video directly from text

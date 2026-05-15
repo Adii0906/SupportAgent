@@ -5,6 +5,7 @@ import { useStore } from './store';
 import { apiService } from './api';
 import Header from './components/Header';
 import LanguageSelector from './components/LanguageSelector';
+import AvatarLookSelector from './components/AvatarLookSelector';
 import InputSection from './components/InputSection';
 import ResponseSection from './components/ResponseSection';
 import AvatarSection from './components/AvatarSection';
@@ -69,6 +70,7 @@ function App() {
         <div className="content-wrapper">
           <div className="left-panel">
             <LanguageSelector />
+            <AvatarLookSelector />
             <InputSection />
             <SettingsPanel />
           </div>

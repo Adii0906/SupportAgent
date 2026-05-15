@@ -29,8 +29,8 @@ export const useStore = create((set) => ({
   setError: (error) => set({ error }),
   clearError: () => set({ error: null }),
 
-  // Avatar state
-  avatarId: 'Wayne_20220920',
+  // Avatar state — HeyGen V3 expects a look id (see GET /v3/avatars/looks), not a legacy name.
+  avatarId: (process.env.REACT_APP_DEFAULT_AVATAR_LOOK_ID || '').trim(),
   setAvatarId: (id) => set({ avatarId: id }),
   isAvatarPlaying: false,
   setIsAvatarPlaying: (playing) => set({ isAvatarPlaying: playing }),
